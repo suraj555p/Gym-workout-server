@@ -4,6 +4,11 @@ const express=require('express')
 const mongoose=require('mongoose')
 const workoutRoutes=require('./routes/workouts.js')
 const userRoutes=require('./routes/user.js')
+const cors = require('cors')
+
+
+//express app
+const app=express()
 
 const corsOptions = {
     origin: 'https://gym-workout-web-application.vercel.app',
@@ -11,9 +16,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-
-//express app
-const app=express()
 
 //middleware
 app.use(express.json())
