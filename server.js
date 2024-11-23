@@ -5,6 +5,13 @@ const mongoose=require('mongoose')
 const workoutRoutes=require('./routes/workouts.js')
 const userRoutes=require('./routes/user.js')
 
+const corsOptions = {
+    origin: 'https://gym-workout-web-application.vercel.app',
+    optionsSuccessStatus: 200 // For legacy browsers
+};
+
+app.use(cors(corsOptions));
+
 //express app
 const app=express()
 
